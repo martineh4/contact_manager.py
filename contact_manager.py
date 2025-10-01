@@ -29,7 +29,7 @@ def delete_contact(name):
         print("Contact not found.")
 
 def main():
-    """Main loop fo rthe conact manager."""
+    """Main loop for the conact manager."""
     while True:
         # Dispplay menu options
         print("\n--- Contact Manager ---")
@@ -67,3 +67,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
