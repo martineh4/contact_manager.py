@@ -11,27 +11,23 @@ def add_contact(name, phone):
     if name in contacts:
         raise DuplicateContactError(f"Contact '{name}' already exists.")
     contacts[name] = phone
-    print(f"Added {name} to contacts.")
+    return f"Added {name} to contacts."
 
 def find_contact(name):
-    """Find and print a contact's phone number."""
-    try:
-        print(contacts[name])
-    except KeyError:
-        print("Contact not found.")
-
+    """Return a contact's phone number, or None if not found."""
+    return contacts.get(name, None)
+    
 def delete_contact(name):
     """Delete a contact if it exists."""
-    try:
+    if name in contacts:
         del contacts[name]
-        print(f"Deleted {name}.")
-    except KeyError:
-        print("Contact not found.")
+        return f"Deleted {name}."
+    return None
 
 def main():
     """Main loop for the contact manager."""
     while True:
-        # Dispplay menu options
+        # Display menu options
         print("\n--- Contact Manager ---")
         print("1. Add Contact")
         print("2. Find Contact")
@@ -50,15 +46,24 @@ def main():
             name = input("Enter contact name: ")
             phone = input("Enter phone number: ")
             try:
-                add_contact(name, phone)
+                result = add_contact(name, phone)
+                print(result)
             except DuplicateContactError as e:
                 print(e)
         elif choice == 2:
             name = input("Enter name to find: ")
-            find_contact(name)
+            result = find_contact(name)
+            if result:
+                print(f"Name: {name}\nPhone Number: {result}")
+            else:
+                print("Contact not found.")
         elif choice == 3:
             name = input("Enter name to delete: ")
-            delete_contact(name)
+            result = delete_contact(name)
+            if result:
+                print(result)
+            else:
+                print("Contact not found.")
         elif choice == 4:
             print("Exiting contact manager. Goodbye!")
             break
@@ -67,5 +72,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
