@@ -25,7 +25,7 @@ These tests can be run using **python -m unittest test_contact_manager.py**
     - Now 'DuplicateContactError' is raised and prevents overwriting phone numbers
 
 ## How to Run
-1. Ensure Python is installed on yyour device
+1. Ensure Python is installed on your device
 2. Download or clone this project
-3. Open the folder ocntaining contact_manager.py in your terminal
+3. Open the folder containing contact_manager.py in your terminal
 4. Run the program by typing python contact_manager.py
