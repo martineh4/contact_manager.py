@@ -29,3 +29,6 @@ These tests can be run using **python -m unittest test_contact_manager.py**
 2. Download or clone this project
 3. Open the folder containing contact_manager.py in your terminal
 4. Run the program by typing python contact_manager.py
+
+## Code Walkthrough and Demonstration
+https://www.loom.com/share/19f99590f8f64263becf589c18d632e2?sid=5ad0640d-c8c7-40cc-8e55-67ca0ebad3a6
